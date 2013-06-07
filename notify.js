@@ -11,8 +11,8 @@ angular.module('nag.notify', [])
       notify: function(options) {
         var self = this;
         var id, classes, $appendTo, $notifyDom, width, height, containerWidth, containerHeight;
-        id = nagHelper.generateId('nag-notify');
-        classes = 'nag-notify';
+        id = nagHelper.generateId('notify');
+        classes = 'notify';
 
         options = angular.extend({
           content: null,
