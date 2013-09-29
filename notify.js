@@ -1,6 +1,10 @@
 /**
- * todo:
- * test all position for absolute within element
+ * Notification window system
+ *
+ * @module nag.notify
+ * @ngservice nagNotify
+ *
+ * @todo: test all position for absolute within element
  */
 angular.module('nag.notify', [])
 .factory('nagNotify', [
@@ -8,12 +12,31 @@ angular.module('nag.notify', [])
   'nagBeat',
   function(nagHelper, nagBeat) {
     return {
+      /**
+       * Creates a notification on the page
+       *
+       * @method notify
+       *
+       * @param {object} options Options for the notification
+       *   @param {string} [options.content=null] The content for the notification
+       *   @param {boolean} [options.closeOnClick=true] Whether or not th notification will close when clicked on
+       *   @param {number|boolean} options.autoCloseDelay=2000] How long till the notification will automatically be closed in milliseconds (false to not
+       *   have it auto close)
+       *   @param {string} [options.appendSelector="body"] CSS selector for where the notification should be appended to
+       *   @param {string} [options.cssPosition="fixed"] CSS positioning for the notification
+       *   @param {margin} [options.margin=5] Margin for the notification
+       *   @param {string} [options.horizontalPosition="middle"] Position horizontally for the notifications
+       *   @param {string} [options.verticalPosition="top"] Position vertically for the notifications
+       *   @param {string} [options.cssClass=""] String with additional classes to add in
+       * @returns {string} The id of the notification
+       */
       notify: function(options) {
         var self = this;
         var id, classes, $appendTo, $notifyDom, width, height, containerWidth, containerHeight;
         id = nagHelper.generateId('notify');
         classes = 'notify';
 
+        //default options for a notify window
         options = angular.extend({
           content: null,
           closeOnClick: true,
@@ -92,6 +115,13 @@ angular.module('nag.notify', [])
         return id;
       },
 
+      /**
+       * Removes the notifications
+       *
+       * @method remove
+       *
+       * @param {string} id The id of the notification
+       */
       remove: function(id){
         nagBeat.remove(id + ' close beat');
         $('#' + id).remove();
