@@ -1,10 +1,22 @@
 /**
- * Notification window system
+ * # Notify
+ *
+ * The notify service allows you to be able to add overlayless modal messages that can information the user about anything.  It appends HTML to the DOM witht he content you want to display to the user which generally will be removed after a specified peroid of time or the user interact with the modal (like clicking on it).
+ *
+ * To create a notify, all you have to do is this:
+ *
+ * ```javascript
+ * nagNotify.notify({
+ *   content: '<div>Whatever HTML you want to put into here</div>'
+ * });
+ *
+ * There is a number of options you can pass to it, just look at the documentation for the notify method.
+ *
+ * @todo: need to move the config defaults into the nagDefault service
+ * @todo: test all position for absolute within element
  *
  * @module nag.notify
  * @ngservice nagNotify
- *
- * @todo: test all position for absolute within element
  */
 angular.module('nag.notify', [])
 .factory('nagNotify', [
@@ -18,16 +30,16 @@ angular.module('nag.notify', [])
        * @method notify
        *
        * @param {object} options Options for the notification
-       *   @param {string} [options.content=null] The content for the notification
-       *   @param {boolean} [options.closeOnClick=true] Whether or not th notification will close when clicked on
-       *   @param {number|boolean} options.autoCloseDelay=2000] How long till the notification will automatically be closed in milliseconds (false to not
+       *   @param {string} content The content for the notification
+       *   @param {boolean} [closeOnClick=true] Whether or not th notification will close when clicked on
+       *   @param {number|boolean} [autoCloseDelay=2000] How long till the notification will automatically be closed in milliseconds (false to not
        *   have it auto close)
-       *   @param {string} [options.appendSelector="body"] CSS selector for where the notification should be appended to
-       *   @param {string} [options.cssPosition="fixed"] CSS positioning for the notification
-       *   @param {margin} [options.margin=5] Margin for the notification
-       *   @param {string} [options.horizontalPosition="middle"] Position horizontally for the notifications
-       *   @param {string} [options.verticalPosition="top"] Position vertically for the notifications
-       *   @param {string} [options.cssClass=""] String with additional classes to add in
+       *   @param {string} [appendSelector="body"] CSS selector for where the notification should be appended to
+       *   @param {string} [cssPosition="fixed"] CSS positioning for the notification
+       *   @param {margin} [margin=5] Margin for the notification
+       *   @param {string} [horizontalPosition="middle"] Position horizontally for the notifications
+       *   @param {string} [verticalPosition="top"] Position vertically for the notifications
+       *   @param {string} [cssClass=""] String with additional classes to add in
        * @returns {string} The id of the notification
        */
       notify: function(options) {
