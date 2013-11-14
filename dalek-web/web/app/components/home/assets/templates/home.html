@@ -1,0 +1,18 @@
+<div class="home-page">
+  <button ng-click="show('top', 'left')" data-ut="top-left">show notify top left</button><br />
+  <button ng-click="show('top', 'middle')" data-ut="top-middle">show notify top middle</button><br />
+  <button ng-click="show('top', 'right')" data-ut="top-right">show notify top right</button><br />
+  <button ng-click="show('middle', 'left')" data-ut="middle-left">show notify middle left</button><br />
+  <button ng-click="show('middle', 'middle')" data-ut="middle-middle">show notify middle middle</button><br />
+  <button ng-click="show('middle', 'right')" data-ut="middle-right">show notify middle right</button><br />
+  <button ng-click="show('bottom', 'left')" data-ut="bottom-left">show notify bottom left</button><br />
+  <button ng-click="show('bottom', 'middle')" data-ut="bottom-middle">show notify bottom middle</button><br />
+  <button ng-click="show('bottom', 'right')" data-ut="bottom-right">show notify bottom right</button><br />
+  <button ng-click="show('middle', 'middle', {closeOnDelay: false})" data-ut="no-auto-close">show notify no auto close</button><br />
+  <button ng-click="show('middle', 'middle', {closeOnDelay: false, closeOnClick: false})" data-ut="no-close-on-click">show notify no close on click</button><br />
+  <button ng-click="show('middle', 'middle', {closeOnClick: true, closeOnDelay: false})" data-ut="close-on-click">show notify close on click</button><br />
+  <button ng-click="show('middle', 'middle', {appendSelector: '.page'})" data-ut="append-to-selector">show notify append to .page</button><br />
+  <button ng-click="show('middle', 'middle', {cssPosition: 'absolute', closeOnDelay: false})" data-ut="position-absolute">show notify position absolute</button><br />
+  <button ng-click="show('middle', 'middle', {cssClass: 'ut', closeOnDelay: false})" data-ut="custom-css-class">show notify custon css class</button><br />
+  <button ng-click="hide()" data-ut="hide">hide</button>
+</div>

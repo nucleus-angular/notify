@@ -18,7 +18,10 @@
  * @module nag.notify
  * @ngservice nagNotify
  */
-angular.module('nag.notify', [])
+angular.module('nag.notify', [
+  'nag.core',
+  'nag.beat'
+])
 .factory('nagNotify', [
   'nagHelper',
   'nagBeat',
@@ -32,7 +35,7 @@ angular.module('nag.notify', [])
        * @param {object} options Options for the notification
        *   @param {string} content The content for the notification
        *   @param {boolean} [closeOnClick=true] Whether or not th notification will close when clicked on
-       *   @param {number|boolean} [autoCloseDelay=2000] How long till the notification will automatically be closed in milliseconds (false to not
+       *   @param {number|boolean} [closeOnDelay=2000] How long till the notification will automatically be closed in milliseconds (false to not
        *   have it auto close)
        *   @param {string} [appendSelector="body"] CSS selector for where the notification should be appended to
        *   @param {string} [cssPosition="fixed"] CSS positioning for the notification
@@ -52,7 +55,7 @@ angular.module('nag.notify', [])
         options = angular.extend({
           content: null,
           closeOnClick: true,
-          autoCloseDelay: 2000,
+          closeOnDelay: 2000,
           appendSelector: 'body',
           //cssPosition absolute useful for showing notify within a relative element and fixed is generally for page wide notifications
           cssPosition: 'fixed',
@@ -109,10 +112,10 @@ angular.module('nag.notify', [])
             break;
         }
 
-        if(_(options.autoCloseDelay).isNumber()){
+        if(_(options.closeOnDelay).isNumber()){
           nagBeat.add(id + ' close beat', function() {
             self.remove(id);
-          }, options.autoCloseDelay, {
+          }, options.closeOnDelay, {
             once: true
           });
         }
