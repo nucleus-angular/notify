@@ -1,0 +1,8 @@
+{
+  "tests": [
+    "dalek/notify.js"
+  ],
+  "browser": [
+    "chrome"
+  ]
+}

@@ -18,10 +18,7 @@
  * @module nag.notify
  * @ngservice nagNotify
  */
-angular.module('nag.notify', [
-  'nag.core',
-  'nag.beat'
-])
+angular.module('nag.notify')
 .factory('nagNotify', [
   'nagHelper',
   'nagBeat',
