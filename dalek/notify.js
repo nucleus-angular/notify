@@ -6,8 +6,8 @@ module.exports = {
     .wait(500)
     .click('[data-ut="top-left"]')
       .assert.visible('body > .notify', 'notify visible')
-      .assert.css('.notify', 'margin-top', '5px', 'top positioned correctly')
-      .assert.css('.notify', 'margin-left', '5px', 'left positioned correctly')
+      .assert.css('.notify', 'top', '5px', 'top positioned correctly')
+      .assert.css('.notify', 'left', '5px', 'left positioned correctly')
     .done();
   },
 
@@ -15,8 +15,8 @@ module.exports = {
     test.open('http://localhost:3000/home')
     .wait(500)
     .click('[data-ut="top-middle"]')
-      .assert.css('.notify', 'margin-top', '5px', 'top positioned correctly')
-      .assert.css('.notify', 'margin-left', '627px', 'left positioned correctly')
+      .assert.css('.notify', 'top', '5px', 'top positioned correctly')
+      .assert.css('.notify', 'right', '627px', 'left positioned correctly')
     .done();
   },
 
@@ -24,8 +24,8 @@ module.exports = {
     test.open('http://localhost:3000/home')
     .wait(500)
     .click('[data-ut="top-right"]')
-      .assert.css('.notify', 'margin-top', '5px', 'top positioned correctly')
-      .assert.css('.notify', 'margin-left', '1249px', 'left positioned correctly')
+      .assert.css('.notify', 'top', '5px', 'top positioned correctly')
+      .assert.css('.notify', 'right', '5px', 'left positioned correctly')
     .done();
   },
 
@@ -33,8 +33,9 @@ module.exports = {
     test.open('http://localhost:3000/home')
     .wait(500)
     .click('[data-ut="middle-left"]')
-      .assert.css('.notify', 'margin-top', '468px', 'top positioned correctly')
-      .assert.css('.notify', 'margin-left', '5px', 'left positioned correctly')
+      .assert.css('.notify', 'top', '450px', 'top positioned correctly')
+      .assert.css('.notify', 'left', '5px', 'left positioned correctly')
+      .assert.css('.notify', 'right', 'auto', 'left positioned correctly')
     .done();
   },
 
@@ -42,8 +43,8 @@ module.exports = {
     test.open('http://localhost:3000/home')
     .wait(500)
     .click('[data-ut="middle-middle"]')
-      .assert.css('.notify', 'margin-top', '468px', 'top positioned correctly')
-      .assert.css('.notify', 'margin-left', '627px', 'left positioned correctly')
+      .assert.css('.notify', 'top', '450px', 'top positioned correctly')
+      .assert.css('.notify', 'right', '627px', 'left positioned correctly')
     .done();
   },
 
@@ -51,8 +52,8 @@ module.exports = {
     test.open('http://localhost:3000/home')
     .wait(500)
     .click('[data-ut="middle-right"]')
-      .assert.css('.notify', 'margin-top', '468px', 'top positioned correctly')
-      .assert.css('.notify', 'margin-left', '1249px', 'left positioned correctly')
+      .assert.css('.notify', 'top', '450px', 'top positioned correctly')
+      .assert.css('.notify', 'right', '5px', 'left positioned correctly')
     .done();
   },
 
@@ -60,8 +61,9 @@ module.exports = {
     test.open('http://localhost:3000/home')
     .wait(500)
     .click('[data-ut="bottom-left"]')
-      .assert.css('.notify', 'margin-top', '932px', 'top positioned correctly')
-      .assert.css('.notify', 'margin-left', '5px', 'left positioned correctly')
+      .assert.css('.notify', 'top', 'auto', 'top positioned correctly')
+      .assert.css('.notify', 'left', '5px', 'left positioned correctly')
+      .assert.css('.notify', 'right', 'auto', 'left positioned correctly')
     .done();
   },
 
@@ -69,8 +71,8 @@ module.exports = {
     test.open('http://localhost:3000/home')
     .wait(500)
     .click('[data-ut="bottom-middle"]')
-      .assert.css('.notify', 'margin-top', '932px', 'top positioned correctly')
-      .assert.css('.notify', 'margin-left', '627px', 'left positioned correctly')
+      .assert.css('.notify', 'top', 'auto', 'top positioned correctly')
+      .assert.css('.notify', 'right', '627px', 'left positioned correctly')
     .done();
   },
 
@@ -78,8 +80,9 @@ module.exports = {
     test.open('http://localhost:3000/home')
     .wait(500)
     .click('[data-ut="bottom-right"]')
-      .assert.css('.notify', 'margin-top', '932px', 'top positioned correctly')
-      .assert.css('.notify', 'margin-left', '1249px', 'left positioned correctly')
+      .assert.css('.notify', 'top', 'auto', 'top positioned correctly')
+      .assert.css('.notify', 'bottom', '5px', 'left positioned correctly')
+      .assert.css('.notify', 'right', '5px', 'left positioned correctly')
     .done();
   },
 

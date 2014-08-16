@@ -57,7 +57,7 @@ angular.module('nag.notify')
           //cssPosition absolute useful for showing notify within a relative element and fixed is generally for page wide notifications
           cssPosition: 'fixed',
           margin: 5,
-          horizontalPosition: 'middle', //left, middle, right
+          horizontalPosition: 'right', //left, middle, right
           verticalPosition: 'top', //top, middle, bottom,
           cssClass: '' //allows you to append one or more css class to the main wrapper
         }, options);
@@ -83,29 +83,41 @@ angular.module('nag.notify')
 
         switch(options.verticalPosition) {
           case 'middle':
-            $('#' + id).css('margin-top', parseInt((containerHeight / 2) - (height / 2)));
+            $('#' + id).css('top', parseInt((containerHeight / 2) - (height / 2)));
             break;
 
           case 'bottom':
-            $('#' + id).css('margin-top', containerHeight - (options.margin + height));
-            break
+            $('#' + id).css({
+              'bottom': options.margin,
+              'top': 'auto'
+            });
+            break;
+
+          case 'top':
+            $('#' + id).css('top', options.margin);
+            break;
 
           default: //top
-            $('#' + id).css('margin-top', options.margin);
             break;
         }
 
         switch(options.horizontalPosition) {
           case 'left':
-            $('#' + id).css('margin-left', options.margin);
+            $('#' + id).css({
+              'left': options.margin,
+              'right': 'auto'
+            });
             break;
 
           case 'right':
-            $('#' + id).css('margin-left', containerWidth - (options.margin + width));
-            break
+            $('#' + id).css('right', options.margin);
+            break;
+
+          case 'middle':
+            $('#' + id).css('right', parseInt((containerWidth / 2) - (width / 2)));
+            break;
 
           default: //middle
-            $('#' + id).css('margin-left', parseInt((containerWidth / 2) - (width / 2)));
             break;
         }
 
