@@ -33,7 +33,7 @@ module.exports = {
     test.open('http://localhost:3000/home')
     .wait(500)
     .click('[data-ut="middle-left"]')
-      .assert.css('.notify', 'top', '450px', 'top positioned correctly')
+      .assert.css('.notify', 'top', '423px', 'top positioned correctly')
       .assert.css('.notify', 'left', '5px', 'left positioned correctly')
       .assert.css('.notify', 'right', 'auto', 'left positioned correctly')
     .done();
@@ -43,7 +43,7 @@ module.exports = {
     test.open('http://localhost:3000/home')
     .wait(500)
     .click('[data-ut="middle-middle"]')
-      .assert.css('.notify', 'top', '450px', 'top positioned correctly')
+      .assert.css('.notify', 'top', '423px', 'top positioned correctly')
       .assert.css('.notify', 'right', '627px', 'left positioned correctly')
     .done();
   },
@@ -52,7 +52,7 @@ module.exports = {
     test.open('http://localhost:3000/home')
     .wait(500)
     .click('[data-ut="middle-right"]')
-      .assert.css('.notify', 'top', '450px', 'top positioned correctly')
+      .assert.css('.notify', 'top', '423px', 'top positioned correctly')
       .assert.css('.notify', 'right', '5px', 'left positioned correctly')
     .done();
   },
